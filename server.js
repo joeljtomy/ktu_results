@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 app.use("/", useIndex);
 app.use("", use404);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 initDB().then(() => {
   app.listen(port, () => console.log(`Server ready on port ${port}.`));
 });
