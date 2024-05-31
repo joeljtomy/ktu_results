@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User not found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Roboto Mono", monospace;
+      }
+      body {
+        text-align: center;
+        min-height: 100vh;
+        padding: 100px 20px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0px auto;
+        background-color: #000000;
+        color: white; 
+      }
+      a {
+        color: deepskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>No User found with Register number: <%= id %></h1>
+    <a href="/">Go back and search again.</a>
+  </body>
+</html>

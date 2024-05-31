@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Individual Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Roboto Mono", monospace;
+      }
+      body {
+        text-align: center;
+        min-height: 100vh;
+        padding: 50px 20px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0px auto;
+        background-color: #000000;
+        color: white;
+      }
+      a {
+        text-align: left;
+        display: block;
+        color: deepskyblue;
+      }
+      div,
+      table {
+        width: 100%;
+        text-align: left;
+      }
+      table {
+        margin: 20px 0px;
+      }
+      h2, .status {
+        text-align: center;
+      }
+      .right {
+        text-align: right;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px white;
+        padding: 5px;
+      }
+      .second tr:nth-child(even),
+      thead tr {
+        background-color: rgb(61, 61, 61);
+      }
+      .pass {
+        color: rgb(50, 255, 47);
+      }
+      .fail {
+        color: rgb(242, 21, 21);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">Go back</a>
+    <div>
+      <h2>B.Tech Exam Result</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><%= fullName %></td>
+          </tr>
+          <tr>
+            <td>Colege</td>
+            <td>VISWAJYOTHI COLLEGE OF ENGINEERING &amp; TECHNOLOGY</td>
+          </tr>
+          <tr>
+            <td>Register Number</td>
+            <td><%= id %></td>
+          </tr>
+          <tr>
+            <td>Branch</td>
+            <td>INFORMATION TECHNOLOGY</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="second">
+        <thead>
+          <tr>
+            <th>
+              <span>SL</span>
+            </th>
+            <th>
+              <span>COURSE</span>
+            </th>
+            <th class="right">
+              <span>GRADE</span>
+            </th>
+            <th class="right">
+              <span>CREDITS</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% grades.forEach((item, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= item.courseName %></td>
+            <td class="right"><%= item.grade %></td>
+            <td class="right"><%= item.credits %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <% let fails = grades.filter(i => i.grade == 'F').length; %>
+      <div class="status">
+        <% if (fails) { %>
+          <span class="pass"><%= grades.length - fails %> Pass, </span>
+          <span class="fail"><%= fails %> Fail</span>
+        <% } else { %>
+          <span class="pass">All Pass</span>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

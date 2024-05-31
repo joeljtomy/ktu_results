@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KTU Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Roboto Mono", monospace;
+      }
+      body {
+        text-align: center;
+        min-height: 100vh;
+        padding: 100px 20px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0px auto;
+        background-color: #000000;
+        color: white;
+      }
+      label {
+        display: block;
+        text-align: left;
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+      }
+      input {
+        background-color: #e8f0fe;
+        border: 1px solid rgb(167, 167, 167);
+        border-radius: 5px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 5px 10px;
+        margin: 10px 0px 20px 0px;
+        text-transform: uppercase;
+      }
+      @media only screen and (max-width: 500px) {
+        body {
+          padding-top: 30px;
+        }
+        input[type="text"] {
+          padding: 10px 10px;
+          font-size: 15px;
+        }
+      }
+      input[type="submit"] {
+        width: 100px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RESULTS</h1>
+    <h2><%= resultName %></h2>
+    <h3>Published Date: <%= publishDate %></h3>
+    <form action="/" method="POST">
+      <label for="registernumber"
+        >Register Number: VJC22IT0XX
+        <input
+          type="text"
+          name="registernumber"
+          id="registernumber"
+          placeholder="Enter here..."
+          required
+      /></label>
+
+      <input type="submit" value="CHECK" />
+    </form>
+  </body>
+</html>
