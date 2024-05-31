@@ -1,6 +1,6 @@
 const Result = require("../schemas/result");
 const ResultNotification = require("../schemas/resultNotification");
-const User = require("../schemas/User");
+const User = require("../schemas/user");
 const getIndividualResult = require("./scrapers/getIndividualResult");
 
 async function onNewResult(newResult) {
